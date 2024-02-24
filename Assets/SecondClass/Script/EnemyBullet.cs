@@ -9,10 +9,10 @@ public class EnemyBullet : MonoBehaviour
 
   
     public float bulletSpeed;
-  
+
     void Start()
     {
- 
+
         Debug.Log($"현재 플레이어의 위치 : {PlayerTransform}");
 
         PlayerTransform = GameObject.Find("Player").transform;
@@ -42,6 +42,10 @@ public class EnemyBullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"충돌한 게임 오브젝트의 이름 {collision.gameObject.name}");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log($"충돌한 게임 오브젝트의 이름 {collision.gameObject.name}");
+            Destroy(gameObject);
+        }
     }
 }

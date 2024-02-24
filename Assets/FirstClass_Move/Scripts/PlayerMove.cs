@@ -11,15 +11,18 @@ namespace FirstClass
         public float moveSpeed = 5f;
 
         private Rigidbody rb;
-
+        playercorooler playercorooler;
         void Start()
         {
+            
             rb = GetComponent<Rigidbody>();
+            playercorooler = GetComponent<playercorooler>();
 
         }
 
         void Update()
         {
+            if (playercorooler.IsPlayerDeath == true) return;
             MovePlayer();
         }
 
