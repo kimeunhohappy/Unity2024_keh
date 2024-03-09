@@ -4,40 +4,48 @@ using UnityEngine;
 
 public class EnemyBulletSponer : MonoBehaviour
 {
-    public GameObject bullet;
-    public Transform bulletTransform;
-    public float spawnTime = 3f;
 
-    // Start is called before the first frame update
+    public Transform PlayerTransform;
+
+
+    public float bulletSpeed;
+
     void Start()
     {
-        StartCoroutine(SpawnBullet());
+
+        Debug.Log($"현재 플레이어의 위치 : {PlayerTransform}");
+
+        PlayerTransform = GameObject.Find("Player").transform;
+
+        Vector3 playerDirection = new Vector3(PlayerTransform.position.x, 0, PlayerTransform.position.z);
+        caulateDirection = (playerDirection - transform.position).normalized;
     }
 
-    // 코루틴을 사용해서 총알을 생성해볼겁니다.
 
-    IEnumerator SpawnBullet()
+    void Update()
     {
-        while (true)
-        {
-            GameObject enemyBullet =
-                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
-
-            EnemyBullet bulletControl = enemyBullet.GetComponent<EnemyBullet>();
-            bulletControl.Test();
-
-            yield return new WaitForSeconds(spawnTime);
-        }
+        BulletMove();
     }
 
-    // 총알은 게임이 시작하고 나서 게임이 끝날 때 까지..
-    // 또는 Enemy가 죽어서 없어질 때 까지 계속해서 총을 발사합니다.
+    Vector3 caulateDirection;
+
+    private void BulletMove()
+    {
+
+
+        transform.position += bulletSpeed * caulateDirection * Time.deltaTime;
+    }
+
+    public void Test()
+    {
+        Debug.Log("총알이 발사되었음");
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log($"충돌한 게임 오브젝트의 이름 {collision.gameObject.name}");
+            Destroy(gameObject);
         }
     }
 }
-//*************************************************************************************************************************************************************************************************

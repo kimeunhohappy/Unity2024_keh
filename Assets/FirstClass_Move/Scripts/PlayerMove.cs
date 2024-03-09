@@ -22,8 +22,9 @@ namespace FirstClass
 
         void Update()
         {
-            if (playercorooler.IsPlayerDeath == true) return;
-            MovePlayer();
+
+                if (GameManager.Instance.IsPlayerDeath == true) return;
+                    MovePlayer();
         }
 
         void MovePlayer()

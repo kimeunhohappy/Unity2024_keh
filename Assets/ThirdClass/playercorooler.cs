@@ -12,22 +12,30 @@ public class playercorooler : MonoBehaviour
     public enum PlayerState { Idle, Run, Death }
 
     PlayerState playerstate;
-    public bool IsPlayerDeath = false;
-    void Start()  
+    PlayerMoveSample playerMove;
+    private void Awake()
     {
-            
+        Initialize();
+        float temo = GameManager.Instance.Coin;
+    }
+
+    private void Initialize()
+    {
+        playerstate = PlayerState.Idle;
+        playerMove = new PlayerMoveSample();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
-        if (IsPlayerDeath == true) return;
+        if (GameManager.Instance.IsPlayerDeath)
+
+
+        if (GameManager.Instance.IsPlayerDeath == true) return;
         SetPlayerState();
         SetPlayerAnimation();
     }
-    private void Initialize()
-    {
-        animator = GetComponentInChildren<Animator>();
-    }
+
     private void SetPlayerAnimation()
     {
         if (playerstate == PlayerState.Idle)
@@ -56,12 +64,13 @@ public class playercorooler : MonoBehaviour
     }
     public void PlayerDeath()
     {
-        if (IsPlayerDeath == true) return;
+        if (GameManager.Instance.IsPlayerDeath == true) return;
         //if (animator = null) return;
         //animator.SetTrigger("Death");
         //=animator?.SetTrigger("Death");
         animator?.SetTrigger("Death");
-        IsPlayerDeath = true;
+        GameManager.Instance.GameOver();
+        GameManager.Instance.IsPlayerDeath = true;
     }
 
     public void PlayerMove()

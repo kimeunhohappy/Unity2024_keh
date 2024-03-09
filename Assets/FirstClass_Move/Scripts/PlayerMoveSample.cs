@@ -9,9 +9,12 @@ namespace Sample
     {
         public float rotationSpeed = 15f;
         public float moveSpeed = 5f;
-
+        
         private Rigidbody rb;
-
+        void Update() 
+        {
+            MovePlayer(transform); 
+        }
         public void MovePlayer(Transform target)
         {
             float v = Input.GetAxis("Vertical");

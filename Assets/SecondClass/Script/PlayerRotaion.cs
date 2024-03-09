@@ -16,6 +16,7 @@ public class PlayerRotation : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float yaw = horizontal * rotateSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.up, yaw, Space.World);
     }
 }
 
