@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBulletSponer : MonoBehaviour
@@ -21,6 +22,20 @@ public class EnemyBulletSponer : MonoBehaviour
         caulateDirection = (playerDirection - transform.position).normalized;
     }
 
+    IEnumerator SpawnBullet()
+    {
+        while (true)
+        {
+            //게임매니저 isPlayerDeath 체크하는 if 함수
+            if(GameManager.Instance.IsPlayerDeath)
+                yield break;
+            //생성 코드
+            GameObject enemyBullet =
+                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+
+            yield return new WaitForSeconds(spawnTime);
+        }
+    }
 
     void Update()
     {

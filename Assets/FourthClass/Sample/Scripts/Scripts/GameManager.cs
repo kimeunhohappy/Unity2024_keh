@@ -2,6 +2,7 @@ using Sample;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public object SceneManger { get; private set; }
+
     //void Awake()함수는 항상 void Start()함수보다 먼저 실행됩니다.
 
     private void Awake()
@@ -58,6 +61,16 @@ public class GameManager : MonoBehaviour
     // static : 클래스 호출&인스턴스 호출
 
     #endregion
+    private void SetGameSetting()
+    {
+        IsPlayerDeath = false;
+
+
+        gameOverObjects[0] - GameObject.Find("BackGrond");
+        gameOverObjects[1] - GameObject.Find("GameOver");
+
+        //초기화 예시
+    }
 
     public GameObject[] gameOverObjects;
     public void GameOver()
@@ -78,7 +91,10 @@ public class GameManager : MonoBehaviour
 
     public void GameRestart()
     {
-
+        //이름이 정확하지 않으면 에러가 발생하기에
+        //Ctrl+C Ctrl+V로 이름을 가져와 씁니다.
+        SetGameSetting();
+        SceneManager.LoadScene("SampleScene");
     }
 
 }
