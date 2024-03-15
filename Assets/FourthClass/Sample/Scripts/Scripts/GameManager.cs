@@ -64,12 +64,7 @@ public class GameManager : MonoBehaviour
     private void SetGameSetting()
     {
         IsPlayerDeath = false;
-
-
-        gameOverObjects[0] - GameObject.Find("BackGrond");
-        gameOverObjects[1] - GameObject.Find("GameOver");
-
-        //초기화 예시
+        // 초기화 예시
     }
 
     public GameObject[] gameOverObjects;

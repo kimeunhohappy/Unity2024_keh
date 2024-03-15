@@ -54,6 +54,7 @@ namespace Sample
         private void SetGameSetting()
         {
            isPlayerDeath = false;
+
         }
 
         public void GameOver()

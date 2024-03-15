@@ -6,7 +6,10 @@ using UnityEngine;
 public class EnemyBulletSponer : MonoBehaviour
 {
 
-    public Transform PlayerTransform;
+    public GameObject bullet;
+    public Transform bulletTransform;
+    public float spawnTime = 3f;
+    public Transform playerTransform;
 
 
     public float bulletSpeed;
@@ -14,11 +17,11 @@ public class EnemyBulletSponer : MonoBehaviour
     void Start()
     {
 
-        Debug.Log($"현재 플레이어의 위치 : {PlayerTransform}");
+        Debug.Log($"현재 플레이어의 위치 : {playerTransform}");
 
-        PlayerTransform = GameObject.Find("Player").transform;
+        playerTransform = GameObject.Find("Player").transform;
 
-        Vector3 playerDirection = new Vector3(PlayerTransform.position.x, 0, PlayerTransform.position.z);
+        Vector3 playerDirection = new Vector3(playerTransform.position.x, 0, playerTransform.position.z);
         caulateDirection = (playerDirection - transform.position).normalized;
     }
 

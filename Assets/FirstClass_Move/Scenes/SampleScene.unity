@@ -218,7 +218,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c34248374774142ae462d5eaf57e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerTransform: {fileID: 0}
+  bullet: {fileID: 0}
+  bulletTransform: {fileID: 0}
+  spawnTime: 3
+  playerTransform: {fileID: 0}
   bulletSpeed: 0
 --- !u!1 &558799886
 GameObject:
@@ -693,8 +696,6 @@ RectTransform:
   - {fileID: 558799887}
   - {fileID: 1754219566}
   - {fileID: 1076268156}
-  - {fileID: 1682051100}
-  - {fileID: 859066874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -812,13 +813,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859066873}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1916572004}
-  m_Father: {fileID: 728728565}
+  m_Father: {fileID: 1076268156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -936,7 +937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &874212206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1595,7 +1596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1076268156
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1608,6 +1609,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1682051100}
+  - {fileID: 859066874}
   - {fileID: 874212206}
   m_Father: {fileID: 728728565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1633,7 +1636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c34248374774142ae462d5eaf57e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerTransform: {fileID: 0}
+  bullet: {fileID: 0}
+  bulletTransform: {fileID: 0}
+  spawnTime: 3
+  playerTransform: {fileID: 0}
   bulletSpeed: 0
 --- !u!1 &1169840052
 GameObject:
@@ -1763,7 +1769,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c34248374774142ae462d5eaf57e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerTransform: {fileID: 0}
+  bullet: {fileID: 0}
+  bulletTransform: {fileID: 0}
+  spawnTime: 3
+  playerTransform: {fileID: 0}
   bulletSpeed: 0
 --- !u!1 &1442752156
 GameObject:
@@ -1831,7 +1840,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c34248374774142ae462d5eaf57e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerTransform: {fileID: 0}
+  bullet: {fileID: 0}
+  bulletTransform: {fileID: 0}
+  spawnTime: 3
+  playerTransform: {fileID: 0}
   bulletSpeed: 0
 --- !u!1 &1622983759
 GameObject:
@@ -2032,13 +2044,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682051099}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 732392975}
-  m_Father: {fileID: 728728565}
+  m_Father: {fileID: 1076268156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2161,7 +2173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1754219566
 RectTransform:
   m_ObjectHideFlags: 0
