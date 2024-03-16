@@ -6,14 +6,19 @@ public class SampleTextTrigger : MonoBehaviour
 {
     public SampleText[] sampleText;
 
-    private void Start()
-    {
-        TriggerText(sampleText);
-    }
+   //private void Start()
+   // {
+   //     TriggerText(sampleText);
+   // }
 
     public void TriggerText(SampleText[] sampleTexts)
     {
         FindObjectOfType<SampleTextManager>().StartText(sampleTexts);
+    }
+
+    public void TriggerText()
+    {
+        FindObjectOfType<SampleTextManager>().StartText(sampleText);
     }
 
 }

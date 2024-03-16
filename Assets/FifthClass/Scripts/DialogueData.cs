@@ -38,7 +38,7 @@ public class DialogueData : MonoBehaviour
 
     public void LoadData()
     {
-        TextAsset jsonString = Resources.Load<TextAsset>($"JsonData/{jsonName}");
+        TextAsset jsonString = Resources.Load<TextAsset>($"JsonData/{jsonName}"); //JsonData이름을 토대로 Json형식의 string파일을 textAsset형식으로 저장
         dialouges = JsonUtility.FromJson<DialogueList>(jsonString.text);
 
         for (int i = 0; i < dialouges.dialogues.Length; i++)
