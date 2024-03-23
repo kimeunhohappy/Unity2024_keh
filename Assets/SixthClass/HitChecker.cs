@@ -9,8 +9,9 @@ public class HitChecker : MonoBehaviour
         if (other.gameObject.CompareTag("Monster"))
         {
             Debug.Log("몬스터를 공격하였음");
-            Destroy(other.gameObject);
-            other.gameObject.SetActiveq(false);
+           
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            enemy.TakeDamge();
         }
     }
 }
