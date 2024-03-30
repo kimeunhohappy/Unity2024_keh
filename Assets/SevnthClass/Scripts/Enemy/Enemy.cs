@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 public class Enemy : MonoBehaviour
 {
@@ -29,6 +30,12 @@ public class Enemy : MonoBehaviour
     public readonly string takeAnimName = "IsHit";
     public readonly string DeathAnimName = "doDeath";
 
+    [Header("몬스터의 공격 제어 변수")]
+    public bool isEnemyAttackEnable;        // 공격 범위안에 플레이어가 들어오면 True, False 반환한다.
+    public bool isAttack;                  // 공격을 실행 중일 때 True, 공격이 끝나면 false로 반환한다.
+    public float attackCoolTime;            // 쿨타임이 있는 동안에는 적이 공격을 못한다.
+    private float attackCheckTime;          // 쿨타임을 제어하는 변수
+
     private void Awake()
     {
         LoadComponent();
@@ -40,7 +47,30 @@ public class Enemy : MonoBehaviour
 
         if (FindDistance >= Vector3.Distance(transform.position, target.position))
         {
+            Debug.Log(Vector3.Distance(transform.position, target.position));
             navMeshAgent.SetDestination(target.position);
+        }
+
+        attackCheckTime += Time.deltaTime;
+
+        if(AttackRange >= Vector3.Distance(transform.position, target.position) && !isAttack)
+        {
+            //현재 플레이어가 공격 범위 안에 있는지 확인하는 변수
+            isEnemyAttackEnable = true;
+            //쿨타임 계산 시간 변수 -> float
+
+            //공격을 할지 말지 계산한다.
+            if(attackCheckTime >= attackCoolTime)
+            {
+                //공격한다.
+                isAttack = true;
+                anim.CrossFade("Attack01", 0.2f);
+                attackCheckTime = 0;
+            }
+        }
+        else
+        {
+            isEnemyAttackEnable = false;
         }
 
     }
@@ -51,6 +81,9 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawLine(transform.position, target.position);
 
         Gizmos.DrawWireSphere(transform.position, FindDistance);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, AttackRange);
     }
 
     private void LoadComponent()

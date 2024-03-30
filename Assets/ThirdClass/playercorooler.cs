@@ -29,7 +29,6 @@ public class playercorooler : MonoBehaviour
     private void Awake()
     {
         Initialize();
-        float temo = GameManager.Instance.Coin;
     }
 
     private void Initialize()

@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour
     // 1.GameManager 안에 있는 모든 static으로 선언한 변수의 이름을 모두 알고 있어야 합니다.
     // 2.static으로 선언한 변수는 프로그램이 종료될 때까지 계속 남아 있습니다.
 
-    public float Coin;
+
+
 
     public bool IsPlayerDeath;
 

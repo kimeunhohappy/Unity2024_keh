@@ -23,6 +23,8 @@ public class EnemyBulletSponer : MonoBehaviour
 
         Vector3 playerDirection = new Vector3(playerTransform.position.x, 0, playerTransform.position.z);
         caulateDirection = (playerDirection - transform.position).normalized;
+
+        StartCoroutine(SpawnBullet());
     }
 
     IEnumerator SpawnBullet()
@@ -42,17 +44,12 @@ public class EnemyBulletSponer : MonoBehaviour
 
     void Update()
     {
-        BulletMove();
+        
     }
 
     Vector3 caulateDirection;
 
-    private void BulletMove()
-    {
 
-
-        transform.position += bulletSpeed * caulateDirection * Time.deltaTime;
-    }
 
     public void Test()
     {
