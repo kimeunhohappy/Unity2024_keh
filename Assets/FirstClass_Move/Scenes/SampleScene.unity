@@ -230,6 +230,10 @@ PrefabInstance:
       value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 7015718602545745653, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
+      propertyPath: iconID
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7015718602545745653, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
       propertyPath: typeSpeed
       value: 0.2
       objectReference: {fileID: 0}
@@ -260,6 +264,26 @@ PrefabInstance:
     - target: {fileID: 8267624594703795128, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907488857263337810, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907488857263337810, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2105276229}
+    - target: {fileID: 8907488857263337810, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayNextSentence
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907488857263337810, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SampleTextManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8907488857263337810, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9197213227009768016, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2527,9 +2551,10 @@ MonoBehaviour:
   - npcName: "\uC7A5\uB85C"
     ImageName: 1001
     sentences:
-    - 111
-    - 222
-    - 333
+    - "\uC624! \uC6A9\uC0AC\uC5EC!"
+    - "\uBD80\uB514 \uC774\uACF3\uC5D0\uC11C \uB0A0\uB6F0\uB294 \uBAAC\uC2A4\uD130\uB4E4\uC744
+      \uD574\uCE58\uC6CC\uC8FC\uAC8C!"
+    - "\uC6A9\uC0AC\uC5EC, \uD589\uC6B4\uC744 \uBE44\uB124."
 --- !u!1 &1386160980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2422904025044470579, guid: 778bb16bb431bae49bc2d8156c16d1a9, type: 3}
@@ -4124,6 +4149,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076629920}
   m_CullTransparentMesh: 1
+--- !u!114 &2105276229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7015718602545745653, guid: 4f10f53d7afbf434eab4be4024af54cf, type: 3}
+  m_PrefabInstance: {fileID: 401883758}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a4a1a4498882a49b56b249ced09708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2147076729
 GameObject:
   m_ObjectHideFlags: 0

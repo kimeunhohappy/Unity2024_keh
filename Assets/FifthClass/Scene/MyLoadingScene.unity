@@ -1592,10 +1592,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1856553386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab206c7a47fd5b04ba47153978274bbc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bed4eba158e3ef4dbcc841844fd22fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBar: {fileID: 116870340}
+  ProgressBar: {fileID: 116870340}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

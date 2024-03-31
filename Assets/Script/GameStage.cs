@@ -77,7 +77,7 @@ public class GameStage : MonoBehaviour
     }
     public void ReturnToTitle()
     {
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("NewIntro");
     }
     public void GameQuit()
     {
