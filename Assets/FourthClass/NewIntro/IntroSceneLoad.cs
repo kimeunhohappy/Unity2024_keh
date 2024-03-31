@@ -10,4 +10,9 @@ public class IntroSceneLoad : MonoBehaviour
         //SceneManager.LoadScene("SampleScene");
         Loading.LoadScene("SampleScene");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
