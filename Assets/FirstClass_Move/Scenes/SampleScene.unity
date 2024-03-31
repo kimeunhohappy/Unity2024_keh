@@ -4277,6 +4277,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2074907211}
+    - target: {fileID: 167733312751782013, guid: 3a86015003df22447b7fa1f19e914d82, type: 3}
+      propertyPath: attackCoolTime
+      value: 6.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2595255111022323658, guid: 3a86015003df22447b7fa1f19e914d82, type: 3}
       propertyPath: m_Name
       value: Enemy_01
