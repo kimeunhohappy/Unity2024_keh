@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
 
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject); 오류 때문에 주석 처리
         }
         else
         {
