@@ -11,6 +11,11 @@ public class IntroSceneLoad : MonoBehaviour
         Loading.LoadScene("SampleScene");
     }
 
+    public void LoadOptionScene()
+    {
+        SceneManager.LoadScene("OptionScene");
+    }
+
     public void QuitGame()
     {
         Application.Quit();

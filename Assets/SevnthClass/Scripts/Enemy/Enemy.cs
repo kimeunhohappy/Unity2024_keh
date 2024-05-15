@@ -1,7 +1,8 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.VFX;
@@ -11,7 +12,7 @@ public class Enemy : MonoBehaviour
     [Header("적 피격 애니메이션 제어 변수")]
     public float hitBackTime = 0.5f;
     public int hitCount;
-    public int maxHP = 2;
+    public int maxHp;
     private int currentHP;
     private SkinnedMeshRenderer skinnMeshRenderer;
     private NavMeshAgent navMeshAgent;
@@ -22,7 +23,7 @@ public class Enemy : MonoBehaviour
     private Animator anim;
 
     [Header("네비게이션 제어 변수")]
-    public float FindDistance;
+    public float FindDistance = 6.5f;
     public float AttackRange;
     private float distance;
     public Transform target;
@@ -33,8 +34,8 @@ public class Enemy : MonoBehaviour
     [Header("몬스터의 공격 제어 변수")]
     public bool isEnemyAttackEnable;        // 공격 범위안에 플레이어가 들어오면 True, False 반환한다.
     public bool isAttack;                  // 공격을 실행 중일 때 True, 공격이 끝나면 false로 반환한다.
-    public float attackCoolTime;            // 쿨타임이 있는 동안에는 적이 공격을 못한다.
-    private float attackCheckTime;          // 쿨타임을 제어하는 변수
+    public float attackCoolTime = 6.8f;            // 쿨타임이 있는 동안에는 적이 공격을 못한다. //
+    private float attackCheckTime;          // 쿨타임을 제어하는 변수 
 
     private void Awake()
     {
